@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #181818;
+}
+
+button {
+  outline: 0;
+  border: 0;
+  background: 0;
+  cursor: pointer;
+}
+
+.bx {
+  color: #FFFFFF;
+  padding: 6px;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1;
+}
+
+* {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.bx {
+  font-size: 2rem;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 5.6rem;
+  padding: 0 1.9rem;
+  background-color: #202020;
+}
+
+.header-left, .header-center, .header-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-center {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 728px;
+          flex: 0 1 728px;
+}
+
+.header-menu-btn {
+  margin-right: 1.8rem;
+}
+
+.header-menu-btn .bx {
+  font-size: 2.5rem;
+}
+
+.header-logo {
+  width: 8rem;
+  height: 2.4rem;
+  fill: #FFFFFF;
+  cursor: pointer;
+}
+
+.header-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 4rem;
+  max-width: 80rem;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.header-search-input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: calc(100% - 8px);
+  margin-left: 0.5rem;
+  padding: 1.2rem;
+  border: 1px solid #373737;
+  border-right: none;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  outline: 0;
+  color: #E2E2E2;
+  background-color: #121212;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.header-search-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 6.5rem;
+  height: calc(100% - 8px);
+  margin-right: 1rem;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-color: #373737;
+}
+
+.header-search-btn:hover .bx {
+  opacity: 0.5;
+}
+
+.header-search .bx {
+  font-size: 1.7rem;
+  opacity: 0.3;
+  color: #FFFFFF;
+}
+
+.header-user-icon {
+  width: 3.2rem;
+  height: auto;
+  border-radius: 50%;
+}
+
+.header-right button:not(:last-child) {
+  margin-right: 1.8rem;
+}
+
+.header-right button:last-child {
+  margin-right: 1rem;
+}
+
+.sidebar {
+  width: 15.7%;
+  padding: 1rem 1.5rem 1rem 0;
+  background-color: #202020;
+}
+
+.sidebar-options .selected {
+  background-color: #383838;
+}
+
+.sidebar-options .selected .bx {
+  color: #FFFFFF;
+}
+
+.sidebar-options-first {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #373737;
+}
+
+.sidebar-options-second {
+  padding: 1rem 0;
+}
+
+.sidebar-options__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 4rem;
+  padding: 0 2rem;
+}
+
+.sidebar-options__link:hover {
+  background-color: #383838;
+}
+
+.sidebar-options__link .bx {
+  color: #909090;
+}
+
+.sidebar-options__icon {
+  margin-right: 2rem;
+}
+
+.sidebar-options__name {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.sidebar-subs-list {
+  padding: 1rem 0;
+  border-top: 1px solid #373737;
+}
+
+.sidebar-subs-title {
+  padding: 1rem 1.2rem 1rem 2.4rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #A0A0A0;
+}
+
+.sidebar-sub-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 4rem;
+  padding: 0 2rem;
+}
+
+.sidebar-sub-link:hover {
+  background-color: #383838;
+}
+
+.sidebar-sub-icon {
+  width: 2.4rem;
+  margin: 0 2.4rem 0 0.4rem;
+  border-radius: 50%;
+}
+
+.sidebar-sub-name {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+/*# sourceMappingURL=main.css.map */

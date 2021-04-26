@@ -1,0 +1,16 @@
+@mixin align-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin align-justify-center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin align-center-with-justifies($justify-content-value: unset) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify-content-value;
+}
