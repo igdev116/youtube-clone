@@ -5,6 +5,7 @@
     background-color: $grey-color;
 }
 
+// sidebar options
 .sidebar-options {
     .selected {
         background-color: $selected-color;
@@ -50,6 +51,7 @@
     }
 }
 
+// sidebar subscriptions
 .sidebar-subs-list {
     padding: 1rem 0;
     border-top: 1px solid $border-color;
@@ -86,5 +88,15 @@
         font-weight: 500;
 
         color: $text-color;
+    }
+}
+
+// sidebar more from youtube
+.sidebar-more-list {
+    padding: 1rem 0;
+    border-top: 1px solid $border-color;
+    
+    &-title {
+        @extend .sidebar-subs-title;
     }
 }
