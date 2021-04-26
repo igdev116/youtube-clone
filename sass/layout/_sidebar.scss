@@ -44,10 +44,7 @@
     }
 
     &__name {
-        font-size: 1.4rem;
-        font-weight: 500;
-
-        color: $text-color;
+        @include sidebar-name-color;
     }
 }
 
@@ -84,10 +81,7 @@
     }
 
     &-name {
-        font-size: 1.4rem;
-        font-weight: 500;
-
-        color: $text-color;
+        @include sidebar-name-color;
     }
 }
 
@@ -98,5 +92,62 @@
     
     &-title {
         @extend .sidebar-subs-title;
+    }
+}
+
+.sidebar-more {
+    &-link {
+        @include align-center;
+
+        height: 4rem;
+        padding: 0 2rem;
+
+        &:hover {
+            background-color: $selected-color;
+        }
+    }
+
+    .bx {
+        font-size: 2rem;
+
+        color: $unselected-color;
+    }
+
+    &__icon {
+        margin-right: 2rem;
+    }
+
+    &__name {
+        @include sidebar-name-color;
+    }
+}
+
+// sidebar functions
+.sidebar-functions {
+    padding: 1rem 0;
+    border-top: 1px solid $border-color;
+}
+
+.sidebar-function {
+    &-link {
+        @include align-center;
+
+        padding: 0 2rem;
+
+        .bx {
+            color: $unselected-color;
+        }
+
+        &:hover {
+            background-color: $selected-color;
+        }
+    }
+
+    &__icon {
+        margin-right: 2rem;
+    }
+
+    &__name {
+        @include sidebar-name-color;
     }
 }

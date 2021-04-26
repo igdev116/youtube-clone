@@ -222,7 +222,7 @@ html {
   border-top: 1px solid #373737;
 }
 
-.sidebar-subs-title {
+.sidebar-subs-title, .sidebar-more-list-title {
   padding: 1rem 1.2rem 1rem 2.4rem;
   font-size: 1.4rem;
   text-transform: uppercase;
@@ -251,6 +251,74 @@ html {
 }
 
 .sidebar-sub-name {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.sidebar-more-list {
+  padding: 1rem 0;
+  border-top: 1px solid #373737;
+}
+
+.sidebar-more-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 4rem;
+  padding: 0 2rem;
+}
+
+.sidebar-more-link:hover {
+  background-color: #383838;
+}
+
+.sidebar-more .bx {
+  font-size: 2rem;
+  color: #909090;
+}
+
+.sidebar-more__icon {
+  margin-right: 2rem;
+}
+
+.sidebar-more__name {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.sidebar-functions {
+  padding: 1rem 0;
+  border-top: 1px solid #373737;
+}
+
+.sidebar-function-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2rem;
+}
+
+.sidebar-function-link .bx {
+  color: #909090;
+}
+
+.sidebar-function-link:hover {
+  background-color: #383838;
+}
+
+.sidebar-function__icon {
+  margin-right: 2rem;
+}
+
+.sidebar-function__name {
   font-size: 1.4rem;
   font-weight: 500;
   color: #FFFFFF;
