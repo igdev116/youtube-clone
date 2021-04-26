@@ -44,12 +44,95 @@ html {
   font-size: 2rem;
 }
 
+.tags {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 5.6rem;
+  padding: 0 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid #373737;
+  border-bottom: 1px solid #373737;
+  list-style: none;
+  overflow: hidden;
+  background-color: #202020;
+}
+
+.tags .next-btn,
+.tags .prev-btn {
+  position: absolute;
+  width: 5.3%;
+  height: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: #202020;
+}
+
+.tags .next-btn .bx,
+.tags .prev-btn .bx {
+  font-size: 1.3rem;
+}
+
+.tags .prev-btn {
+  display: none;
+  left: 0;
+  -webkit-box-shadow: 12px 0 20px 3px rgba(32, 32, 32, 0.9);
+          box-shadow: 12px 0 20px 3px rgba(32, 32, 32, 0.9);
+}
+
+.tags .next-btn {
+  right: 0;
+  -webkit-box-shadow: -12px 0 20px 3px rgba(32, 32, 32, 0.9);
+          box-shadow: -12px 0 20px 3px rgba(32, 32, 32, 0.9);
+}
+
+.tag {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.tag-link {
+  display: block;
+  margin: auto 0.6rem;
+  line-height: 3rem;
+  padding: 0 1.2rem;
+  border-radius: 16px;
+  font-size: 1.4rem;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #373737;
+  -webkit-transition: 0.15s ease;
+  transition: 0.15s ease;
+}
+
+.tag-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.selected-tag {
+  background-color: #FFFFFF;
+  color: black;
+}
+
+.selected-tag:hover {
+  background-color: #909090;
+}
+
 .main-content {
+  position: relative;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   justify-items: center;
-  padding: 2.4rem;
+  padding: calc(2.4rem + 5.6rem) 2.4rem 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
@@ -57,7 +140,6 @@ html {
   -ms-grid-rows: (25.97rem)[2];
       grid-template-rows: repeat(2, 25.97rem);
   grid-row-gap: 4rem;
-  border-top: 1px solid #373737;
 }
 
 .card {
@@ -199,6 +281,9 @@ html {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 728px;
           flex: 0 1 728px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .header-menu-btn {
@@ -223,9 +308,9 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 650px;
+          flex: 0 1 650px;
   height: 4rem;
   max-width: 80rem;
   border-radius: 2px;

@@ -14,6 +14,7 @@
 
     &-center {
         flex: 0 1 728px;
+        justify-content: flex-end;
     }
 }
 
@@ -37,7 +38,7 @@
     &-search {
         @include align-center;
 
-        flex: 1;
+        flex: 0 1 650px;
         height: 4rem;
         max-width: 80rem;
         border-radius: 2px;
