@@ -33,12 +33,10 @@
 
     .prev-btn {
         display: none;
-        left: 0;
         box-shadow: 12px 0 20px 3px rgba($grey-color, 0.9);
     }
 
     .next-btn {
-        right: 0;
         box-shadow: -12px 0 20px 3px rgba($grey-color, 0.9);
     }
 
@@ -49,6 +47,7 @@
 
 .tag {
     flex-shrink: 0;
+    user-select: none;
 }
 
 .tag-link {
