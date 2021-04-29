@@ -1,7 +1,9 @@
-.main-content {
+.cards {
     position: relative;
+    top: $header-height;
+    left: $sidebar-width;
 
-    flex: 1;
+    width: 100% - $sidebar-width;
     justify-items: center;
     padding: calc(2.4rem + 5.6rem) 2.4rem 0;
     display: grid;

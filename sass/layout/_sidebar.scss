@@ -1,5 +1,10 @@
 .sidebar {
-    width: 15.7%;
+    position: fixed;
+    top: $header-height;
+    left: 0;
+    z-index: 999;
+
+    width: $sidebar-width;
     padding: 1rem 1.5rem 1rem 0;
 
     background-color: $grey-color;

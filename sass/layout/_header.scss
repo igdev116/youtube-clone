@@ -1,7 +1,12 @@
 .header {
     @include align-center-with-justifies(space-between);
-
-    height: 5.6rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    
+    height: $header-height;
     padding: 0 1.9rem;
 
     background-color: $grey-color;

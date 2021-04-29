@@ -30,3 +30,16 @@ function dragSlider() {
 }
 
 dragSlider();
+
+function clickSlider() {
+    let tagsCtn = document.querySelector('.tags'); // get element of tags container
+    let nextBtn = document.querySelector('.next-btn'); // get element of next button
+    let count = 1;
+
+    nextBtn.addEventListener('click', () => {
+        tagsCtn.style.transform = `translateX(${-200 * count}px)`
+        count++;
+    })
+}
+
+clickSlider();
