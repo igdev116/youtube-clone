@@ -24,8 +24,8 @@ function dragSlider() {
     
         const x = e.pageX - tagsCtn.offsetLeft;
         const walk = x - startX;
-        console.log({x, startX, scrollLeft});
-        tagsCtn.scrollLeft =  scrollLeft - walk;
+
+        tagsCtn.style.transform = `translateX(${walk}px)`;
     })
 }
 
@@ -37,7 +37,7 @@ function clickSlider() {
     let count = 1;
 
     nextBtn.addEventListener('click', () => {
-        tagsCtn.style.transform = `translateX(${-200 * count}px)`
+        tagsCtn.style.transform = `translateX(${-320 * count}px)`
         count++;
     })
 }

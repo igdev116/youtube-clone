@@ -2,7 +2,7 @@
     position: fixed;
     top: $header-height;
     left: $sidebar-width;
-    z-index: 999;
+    z-index: 900;
 
     width: 100% - $sidebar-width;
     height: $header-height;
@@ -50,11 +50,10 @@
     padding: 0 1.5rem;
     align-items: center;
     list-style: none;
-    overflow: hidden;
-    // overflow-x: hidden;
 
-
-    transition: 0.2s ease;
+    transition-duration: 0.15s;
+    transition-timing-function: cubic-bezier(0.05, 0, 0, 1);
+    will-change: transition;
 
     // &::-webkit-scrollbar {
     //     display: none;
