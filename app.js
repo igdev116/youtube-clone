@@ -15,7 +15,8 @@ function dragSlider() {
         isDown = true;
         startX = e.pageX - tagsCtn.offsetLeft;
         updateValue += scrollLeft; // value will be updated every next click
-        tagsCtn.style.transform = `translateX(${updateValue + walk}px)`;
+        console.log({updateValue});
+        // tagsCtn.style.transform = `translateX(${updateValue}px)`;
     })
 
     tagsCtn.addEventListener('mouseup', () => {
@@ -32,24 +33,20 @@ function dragSlider() {
         e.preventDefault(); 
         let x = e.pageX - tagsCtn.offsetLeft;
         
+        
+        if (x < startX || transValue(tagsCtn.style.transform) < 0) {
+            let walk = x - startX;
+            scrollLeft = 0 + walk;
+            tagsCtn.style.transform = `translateX(${updateValue + walk}px)`;
+        } 
         // handle when the user drags all the way to the right
-        if (x > startX) {
+        else if (x > startX) {
             startX = x;
-            let walk = x - startX;
-            tagsCtn.style.transform = `translateX(${updateValue + walk}px)`;
-        } else {
-            let walk = x - startX;
-            console.log({walk});
-            // scrollLeft = 0 + walk;
-            tagsCtn.style.transform = `translateX(${updateValue + walk}px)`;
+            // updateValue = 0;
+            // scrollLeft = 0;
+            tagsCtn.style.transform = `translateX(0px)`;
         }
- 
-        // if (transValue(tagsCtn.style.transform) > 0) {
-        //     console.log(tagsCtn.style.transform)
-        //     tagsCtn.style.transform = `translateX(0px)`;
-        //     updateValue = 0; // if translateX value is larger than 0 then reset to original
-        //     // scrollLeft = 0;
-        // }
+        
     })
 }
 
