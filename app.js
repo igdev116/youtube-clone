@@ -5,8 +5,28 @@ function transValue(value) {
 
 // create drag slider
 function dragSlider() {
-    let tagsCtn = document.querySelector('.tags'); // get element of tags container
+    // set main width for tags container
+    let tagsCtnMainWidth = () => {
+        let tags = tagsCtn.querySelectorAll('.tag'); // get element of tags 
+        let tagsCtnWidth = 0;
+
+        for (let tag of tags) {
+            tagsCtnWidth += tag.getBoundingClientRect().width;
+        }
+        tagsCtn.style.width = `${tagsCtnWidth}px`;
+
+        return tagsCtnWidth;
+    }
+
+    let tagsParCtn = document.querySelector('.tags-container'); // get element of tags parent container
+    let tagsCtn = tagsParCtn.querySelector('.tags'); // get element of tags container
+    let tagsParCtnWidth = tagsParCtn.getBoundingClientRect().width; // get width of tags parent container    
+    let tagsCtnWidth = tagsCtnMainWidth(); // get width of tags container
+    let maxTransX = -(tagsCtnWidth - tagsParCtnWidth) // max translateX value
+    let distance = Math.floor(maxTransX); // get redundant part of the parent tags container compared to tag container
+    
     let isDown = false,
+        isMove = false,
         startX,
         scrollLeft = 0,
         updateValue = 0;
@@ -14,9 +34,12 @@ function dragSlider() {
     tagsCtn.addEventListener('mousedown', (e) => {
         isDown = true;
         startX = e.pageX - tagsCtn.offsetLeft;
-        updateValue += scrollLeft; // value will be updated every next click
-        console.log({updateValue});
-        // tagsCtn.style.transform = `translateX(${updateValue}px)`;
+
+        // the value will be updated 1 time per new drag  
+        if (isMove) {
+            updateValue += scrollLeft;
+            isMove = false;
+        }        
     })
 
     tagsCtn.addEventListener('mouseup', () => {
@@ -30,23 +53,33 @@ function dragSlider() {
 
     tagsCtn.addEventListener('mousemove', (e) => {
         if (!isDown) return;
-        e.preventDefault(); 
-        let x = e.pageX - tagsCtn.offsetLeft;
+        e.preventDefault();
         
-        
+        isMove = true;
+        const x = e.pageX - tagsCtn.offsetLeft;
+
+        // handle when the user drags to the left
         if (x < startX || transValue(tagsCtn.style.transform) < 0) {
-            let walk = x - startX;
-            scrollLeft = 0 + walk;
+            const walk = x - startX;
+            scrollLeft = walk; // the value when dragged will be continuously updated
+
             tagsCtn.style.transform = `translateX(${updateValue + walk}px)`;
-        } 
+
+            // handle when the user drags all the way to the left
+            if (transValue(tagsCtn.style.transform) <= distance) {                
+                startX = x;
+                updateValue = maxTransX; // the value will be updated to maximum
+
+                tagsCtn.style.transform = `translateX(${maxTransX}px)`;
+            }
+        }
         // handle when the user drags all the way to the right
         else if (x > startX) {
             startX = x;
-            // updateValue = 0;
-            // scrollLeft = 0;
+            updateValue = 0; // the value will be updated to its original state
+            scrollLeft = 0;
             tagsCtn.style.transform = `translateX(0px)`;
         }
-        
     })
 }
 
@@ -64,4 +97,4 @@ function clickSlider(walk) {
     })
 }
 
-clickSlider();
+// clickSlider();
