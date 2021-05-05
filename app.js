@@ -20,11 +20,12 @@ function dragSlider() {
 
     let tagsParCtn = document.querySelector('.tags-container'); // get element of tags parent container
     let tagsCtn = tagsParCtn.querySelector('.tags'); // get element of tags container
-    let tagsParCtnWidth = tagsParCtn.getBoundingClientRect().width; // get width of tags parent container    
+    let tagsParCtnWidth = tagsParCtn.getBoundingClientRect().width; // get width of tags parent container  
     let tagsCtnWidth = tagsCtnMainWidth(); // get width of tags container
+
     let maxTransX = -(tagsCtnWidth - tagsParCtnWidth) // max translateX value
     let distance = Math.floor(maxTransX); // get redundant part of the parent tags container compared to tag container
-    
+
     let isDown = false,
         isMove = false,
         startX,
@@ -86,15 +87,45 @@ function dragSlider() {
 dragSlider();
 
 // create click slider
-function clickSlider(walk) {
-    let tagsCtn = document.querySelector('.tags'); // get element of tags container
-    let nextBtn = document.querySelector('.next-btn'); // get element of next button
-    let count = 1;
+function clickSlider() {
+    let tagsParCtn = document.querySelector('.tags-container'); // get element of tags parent container
+    let tagsCtn = tagsParCtn.querySelector('.tags'); // get element of tags container
+    let nextBtn = tagsParCtn.querySelector('.next-btn'); // get element of next button
+    let prevBtn = tagsParCtn.querySelector('.prev-btn'); // get element of next button
 
-    nextBtn.addEventListener('click', () => {
-        tagsCtn.style.transform = `translateX(${walk - 320 * count}px)`
+    let tagsParCtnWidth = tagsParCtn.getBoundingClientRect().width; // get width of tags parent container
+    let tagsCtnWidth = tagsCtn.getBoundingClientRect().width; // get width of tags container
+    
+    let distance = tagsCtnWidth - tagsParCtnWidth; // get redundant part of the parent tags container compared to tag container
+    let count = 0;
+
+    prevBtn.style.display = 'none';
+
+    nextBtn.addEventListener('click', () => {        
         count++;
+        tagsCtn.style.transform = `translateX(${-320 * count}px)`;
+        
+        if (transValue(tagsCtn.style.transform) <= -distance) {
+            tagsCtn.style.transform = `translateX(-${distance}px)`;
+            nextBtn.style.display = 'none';
+            return;
+        }
+
+        prevBtn.style.display = 'block';
+    })
+
+    prevBtn.addEventListener('click', () => {
+        count--;
+        tagsCtn.style.transform = `translateX(${transValue(tagsCtn.style.transform) + 320}px)`;
+        
+        if (transValue(tagsCtn.style.transform) + 320 >= 0) {
+            tagsCtn.style.transform = `translateX(0px)`;
+            prevBtn.style.display = 'none';
+            return;
+        }
+
+        nextBtn.style.display = 'block';
     })
 }
 
-// clickSlider();
+clickSlider();
