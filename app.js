@@ -9,28 +9,39 @@ function slider() {
     let tagsCtnMainWidth = () => {
         let tags = tagsCtn.querySelectorAll('.tag'); // get element of tags 
         let tagsCtnWidth = 0;
+        let paddingLeft = window.getComputedStyle(tagsCtn).paddingLeft || 0;
+        let paddingRight = window.getComputedStyle(tagsCtn).paddingRight || 0;
 
         for (let tag of tags) {
             tagsCtnWidth += tag.getBoundingClientRect().width;
         }
-        tagsCtn.style.width = `${tagsCtnWidth}px`;
 
-        return tagsCtnWidth;
+        tagsCtn.style.width = `${tagsCtnWidth + transValue(paddingLeft) + transValue(paddingRight)}px`;
+        return tagsCtn.getBoundingClientRect().width;
     }
 
-    let tagsParCtn = document.querySelector('.tags-container'); // get element of tags parent container
-    let tagsCtn = tagsParCtn.querySelector('.tags'); // get element of tags container
-    let tagsParCtnWidth = tagsParCtn.getBoundingClientRect().width; // get width of tags parent container  
-    let tagsCtnWidth = tagsCtnMainWidth(); // get width of tags container
+    let tagsParCtn = document.querySelector('.tags-container'), // get element of tags parent container
+        tagsCtn = tagsParCtn.querySelector('.tags'), // get element of tags container
+        nextBtn = tagsParCtn.querySelector('.next-btn'), // get element of next button
+        prevBtn = tagsParCtn.querySelector('.prev-btn'), // get element of next button
+    
+        tagsParCtnWidth = tagsParCtn.getBoundingClientRect().width, // get width of tags parent container  
+        tagsCtnWidth = tagsCtnMainWidth(), // get width of tags container
 
-    let maxTransX = -(tagsCtnWidth - tagsParCtnWidth) // max translateX value
-    let distance = Math.floor(maxTransX); // get redundant part of the parent tags container compared to tag container
-
-    let isDown = false,
-        isMove = false,
+        distance = -(tagsCtnWidth - tagsParCtnWidth), // get redundant part of the parent tags container compared to tag container
+        isDown = false,
+        isMove = false, // prevent continuous clicking on the slide
         startX,
         scrollLeft = 0,
         updateValue = 0;
+
+    // hide or show buttons
+    let hide = (el) => {
+        el.style.display = 'none';
+    }    
+    let show = (el) => {
+        el.style.display = 'block';
+    }
 
     // create drag slider
     let dragSlider = () => {
@@ -47,7 +58,6 @@ function slider() {
     
         tagsCtn.addEventListener('mouseup', () => {
             isDown = false;
-            console.log('Done');
         })
     
         tagsCtn.addEventListener('mouseleave', () => {
@@ -67,21 +77,29 @@ function slider() {
                 scrollLeft = walk; // the value when dragged will be continuously updated
     
                 tagsCtn.style.transform = `translateX(${updateValue + walk}px)`;
-    
+
                 // handle when the user drags all the way to the left
                 if (transValue(tagsCtn.style.transform) <= distance) {
                     startX = x;
-                    updateValue = maxTransX; // the value will be updated to maximum
+                    updateValue = distance; // the value will be updated to maximum
     
-                    tagsCtn.style.transform = `translateX(${maxTransX}px)`;
+                    tagsCtn.style.transform = `translateX(${distance}px)`;
+
+                    hide(nextBtn);
                 }
+
+                if (true) transValue(tagsCtn.style.transform) <= distance ? hide(nextBtn) : show(nextBtn);
+
+                show(prevBtn);
             }
             // handle when the user drags all the way to the right
             else if (x > startX) {
                 startX = x;
                 updateValue = 0; // the value will be updated to its original state
-                scrollLeft = 0;
+                scrollLeft = 0; // the value will be updated to its original state
                 tagsCtn.style.transform = `translateX(0px)`;
+
+                hide(prevBtn);
             }
         })
     }
@@ -89,42 +107,38 @@ function slider() {
     dragSlider();
 
     // create click slider
-    let clickSlider = () => {
-        let nextBtn = tagsParCtn.querySelector('.next-btn'); // get element of next button
-        let prevBtn = tagsParCtn.querySelector('.prev-btn'); // get element of next button
-
+    let clickSlider = () => {        
         let tagsParCtnWidth = tagsParCtn.getBoundingClientRect().width; // get width of tags parent container
         let tagsCtnWidth = tagsCtn.getBoundingClientRect().width; // get width of tags container
 
         let distance = tagsCtnWidth - tagsParCtnWidth; // get redundant part of the parent tags container compared to tag container
-        let count = 0;
 
         prevBtn.style.display = 'none';
 
         nextBtn.addEventListener('click', () => {
-            count++;
-            tagsCtn.style.transform = `translateX(${-320 * count}px)`;
+            tagsCtn.style.transform = `translateX(${transValue(tagsCtn.style.transform) - 320}px)`;
 
             if (transValue(tagsCtn.style.transform) <= -distance) {
                 tagsCtn.style.transform = `translateX(-${distance}px)`;
-                nextBtn.style.display = 'none';
-                return;
+                hide(nextBtn);
             }
-
-            prevBtn.style.display = 'block';
+            
+            updateValue = transValue(tagsCtn.style.transform);
+            scrollLeft = 0;
+            show(prevBtn);
         })
 
         prevBtn.addEventListener('click', () => {
-            count--;
             tagsCtn.style.transform = `translateX(${transValue(tagsCtn.style.transform) + 320}px)`;
-
+            
             if (transValue(tagsCtn.style.transform) > 0) {
                 tagsCtn.style.transform = `translateX(0px)`;
-                prevBtn.style.display = 'none';
-                return;
+                hide(prevBtn);
             }
-
-            nextBtn.style.display = 'block';
+            
+            updateValue = transValue(tagsCtn.style.transform);
+            scrollLeft = 0;
+            show(nextBtn);
         })
     }
 
