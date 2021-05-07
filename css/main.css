@@ -41,14 +41,14 @@ html {
 }
 
 .bx {
-  font-size: 2rem;
+  font-size: 2.1rem;
 }
 
 .tags-container {
   position: fixed;
   top: 5.6rem;
   left: 15.7%;
-  z-index: 999;
+  z-index: 900;
   width: 84.3%;
   height: 5.6rem;
   overflow: hidden;
@@ -61,7 +61,7 @@ html {
 .tags-container .prev-btn {
   position: absolute;
   z-index: 500;
-  width: 5.3%;
+  width: 4.5%;
   height: calc(100% - 5px);
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -75,15 +75,14 @@ html {
 }
 
 .tags-container .prev-btn {
-  display: none;
-  -webkit-box-shadow: 12px 0 15px 7px #202020;
-          box-shadow: 12px 0 15px 7px #202020;
+  -webkit-box-shadow: 12px 0 15px 5px #202020;
+          box-shadow: 12px 0 15px 5px #202020;
 }
 
 .tags-container .next-btn {
   right: 0;
-  -webkit-box-shadow: -12px 0 15px 7px #202020;
-          box-shadow: -12px 0 15px 7px #202020;
+  -webkit-box-shadow: -12px 0 15px 5px #202020;
+          box-shadow: -12px 0 15px 5px #202020;
 }
 
 .tags {
@@ -100,9 +99,11 @@ html {
       -ms-flex-align: center;
           align-items: center;
   list-style: none;
-  overflow: hidden;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-transition-timing-function: cubic-bezier(0.05, 0, 0, 1);
+          transition-timing-function: cubic-bezier(0.05, 0, 0, 1);
+  will-change: transition;
 }
 
 .tag {
@@ -182,8 +183,7 @@ html {
   bottom: 5px;
   font-size: 1rem;
   font-weight: 500;
-  padding: 0.3rem 0.4rem;
-  text-align: center;
+  padding: 0.3rem 0.35rem;
   letter-spacing: 1px;
   color: #FFFFFF;
   background-color: rgba(0, 0, 0, 0.8);
@@ -394,11 +394,22 @@ html {
 .sidebar {
   position: fixed;
   top: 5.6rem;
-  left: 0;
+  bottom: 0;
   z-index: 999;
   width: 15.7%;
-  padding: 1rem 1.5rem 1rem 0;
+}
+
+.sidebar-container {
+  height: 100%;
+  padding: 1rem 0;
+  overflow-y: auto;
   background-color: #202020;
+}
+
+.sidebar .copyright {
+  font-size: 1.2rem;
+  padding: 1.6rem 2.4rem;
+  color: #717171;
 }
 
 .sidebar-options .selected {
@@ -552,5 +563,18 @@ html {
   font-size: 1.4rem;
   font-weight: 500;
   color: #FFFFFF;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 1.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #909090;
+  height: 420px;
+  border-radius: 8px;
+  border: 4px solid transparent;
+  background-clip: content-box;
 }
 /*# sourceMappingURL=main.css.map */

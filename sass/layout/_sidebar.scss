@@ -1,13 +1,25 @@
 .sidebar {
     position: fixed;
     top: $header-height;
-    left: 0;
+    bottom: 0;
     z-index: 999;
 
     width: $sidebar-width;
-    padding: 1rem 1.5rem 1rem 0;
 
-    background-color: $grey-color;
+    &-container {
+        height: 100%;
+        padding: 1rem 0;
+        overflow-y: auto;
+
+        background-color: $grey-color;
+    }
+
+    .copyright {
+        font-size: 1.2rem;
+        padding: 1.6rem 2.4rem;
+
+        color: $copyright-color;
+    }
 }
 
 // sidebar options
@@ -94,7 +106,7 @@
 .sidebar-more-list {
     padding: 1rem 0;
     border-top: 1px solid $border-color;
-    
+
     &-title {
         @extend .sidebar-subs-title;
     }
