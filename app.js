@@ -84,8 +84,6 @@ function slider() {
                     updateValue = distance; // the value will be updated to maximum
     
                     tagsCtn.style.transform = `translateX(${distance}px)`;
-
-                    hide(nextBtn);
                 }
 
                 if (true) transValue(tagsCtn.style.transform) <= distance ? hide(nextBtn) : show(nextBtn);
@@ -131,7 +129,7 @@ function slider() {
         prevBtn.addEventListener('click', () => {
             tagsCtn.style.transform = `translateX(${transValue(tagsCtn.style.transform) + 320}px)`;
             
-            if (transValue(tagsCtn.style.transform) > 0) {
+            if (transValue(tagsCtn.style.transform) >= 0) {
                 tagsCtn.style.transform = `translateX(0px)`;
                 hide(prevBtn);
             }
@@ -147,3 +145,196 @@ function slider() {
 
 slider();
 
+// render cards
+function renderCards() {
+    const cardsInfo = [
+        {
+            title: '8 reasons to start using SCSS right now',
+            thumb: '1',
+            avatar: '1',
+            userName: 'Dev Ed',
+            views: '3.9M',
+            time: '2 days',
+            duration: '3:32'
+        },
+        {
+            title: '8 reasons to start using SCSS right now',
+            thumb: '1',
+            avatar: '1',
+            userName: 'Dev Ed',
+            views: '3.9M',
+            time: '2 days',
+            duration: '3:32'
+        },
+        {
+            title: '8 reasons to start using SCSS right now',
+            thumb: '1',
+            avatar: '1',
+            userName: 'Dev Ed',
+            views: '3.9M',
+            time: '2 days',
+            duration: '3:32'
+        },
+        {
+            title: '8 reasons to start using SCSS right now',
+            thumb: '1',
+            avatar: '1',
+            userName: 'Dev Ed',
+            views: '3.9M',
+            time: '2 days',
+            duration: '3:32'
+        },
+        {
+            title: '8 reasons to start using SCSS right now',
+            thumb: '1',
+            avatar: '1',
+            userName: 'Dev Ed',
+            views: '3.9M',
+            time: '2 days',
+            duration: '3:32'
+        },
+        {
+            title: '8 reasons to start using SCSS right now',
+            thumb: '1',
+            avatar: '1',
+            userName: 'Dev Ed',
+            views: '3.9M',
+            time: '2 days',
+            duration: '3:32'
+        },
+        {
+            title: '8 reasons to start using SCSS right now',
+            thumb: '1',
+            avatar: '1',
+            userName: 'Dev Ed',
+            views: '3.9M',
+            time: '2 days',
+            duration: '3:32'
+        },
+        {
+            title: '8 reasons to start using SCSS right now',
+            thumb: '1',
+            avatar: '1',
+            userName: 'Dev Ed',
+            views: '3.9M',
+            time: '2 days',
+            duration: '3:32'
+        },
+        {
+            title: '8 reasons to start using SCSS right now',
+            thumb: '1',
+            avatar: '1',
+            userName: 'Dev Ed',
+            views: '3.9M',
+            time: '2 days',
+            duration: '3:32'
+        },
+        {
+            title: '8 reasons to start using SCSS right now',
+            thumb: '1',
+            avatar: '1',
+            userName: 'Dev Ed',
+            views: '3.9M',
+            time: '2 days',
+            duration: '3:32'
+        },
+        {
+            title: '8 reasons to start using SCSS right now',
+            thumb: '1',
+            avatar: '1',
+            userName: 'Dev Ed',
+            views: '3.9M',
+            time: '2 days',
+            duration: '3:32'
+        },
+        {
+            title: '8 reasons to start using SCSS right now',
+            thumb: '1',
+            avatar: '1',
+            userName: 'Dev Ed',
+            views: '3.9M',
+            time: '2 days',
+            duration: '3:32'
+        },
+        {
+            title: '8 reasons to start using SCSS right now',
+            thumb: '1',
+            avatar: '1',
+            userName: 'Dev Ed',
+            views: '3.9M',
+            time: '2 days',
+            duration: '3:32'
+        },
+        {
+            title: '8 reasons to start using SCSS right now',
+            thumb: '1',
+            avatar: '1',
+            userName: 'Dev Ed',
+            views: '3.9M',
+            time: '2 days',
+            duration: '3:32'
+        },
+        {
+            title: '8 reasons to start using SCSS right now',
+            thumb: '1',
+            avatar: '1',
+            userName: 'Dev Ed',
+            views: '3.9M',
+            time: '2 days',
+            duration: '3:32'
+        },{
+            title: '8 reasons to start using SCSS right now',
+            thumb: '1',
+            avatar: '1',
+            userName: 'Dev Ed',
+            views: '3.9M',
+            time: '2 days',
+            duration: '3:32'
+        },
+    ] // save cards info
+
+    let cardsCtn = document.querySelector('.cards'); // get element of cards container
+    let cards = '';
+
+    for (let cardInfo of cardsInfo) {
+        cards += `
+        <div class="card">
+            <a href="#" class="card-link">
+                <div class="card-thumbnail">
+                    <img src="img/thumb-${cardInfo.thumb}.png" alt="">
+                    <div class="card-times">${cardInfo.duration}</div>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-avatar">
+                        <img src="img/user-${cardInfo.avatar}.png" alt="">
+                    </div>
+
+                    <div class="card-description">
+                        <h3 class="card-title">${cardInfo.title}</h3>
+                        <div class="card-user">
+                            <span class="card-user__name">${cardInfo.userName}</span>
+                            <span class="card-user__verified">
+                                <i class='bx bxs-check-circle'></i>
+                            </span>
+                        </div>
+
+                        <div class="card-info">
+                            <span class="card-views">${cardInfo.views} views</span>
+                            <span class="card-date">${cardInfo.time} ago</span>
+                        </div>
+
+                        <div class="card-options">
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        `
+    }
+
+    cardsCtn.innerHTML = cards;
+}
+
+renderCards();
