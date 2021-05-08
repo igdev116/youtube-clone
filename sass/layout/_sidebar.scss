@@ -4,11 +4,9 @@
     bottom: 0;
     z-index: 999;
 
-    width: $sidebar-width;
-
     &-container {
         height: 100%;
-        padding: 1rem 0;
+        padding: 0.9rem 0;
         overflow-y: auto;
 
         background-color: $grey-color;
@@ -17,9 +15,14 @@
     .copyright {
         font-size: 1.2rem;
         padding: 1.6rem 2.4rem;
+        border-top: 1px solid #373737;
 
         color: $copyright-color;
     }
+}
+
+.sidebar-large {
+    width: $sidebar-width;
 }
 
 // sidebar options
@@ -41,17 +44,20 @@
         padding: 1rem 0;
     }
 
+    &__item:hover {
+        background-color: $selected-color;
+    }
+
     &__link {
         @include align-center;
 
         height: 4rem;
         padding: 0 2rem;
 
-        &:hover {
-            background-color: $selected-color;
-        }
-
         .bx {
+            font-size: 2.3rem;
+            padding: 0rem 0.45rem;
+
             color: $unselected-color;
         }
     }
@@ -167,4 +173,60 @@
     &__name {
         @include sidebar-name-color;
     }
+}
+
+// small sidebar
+.sidebar-small {
+    // display: none;
+    width: 7.2rem;
+
+    .sidebar-options {
+        height: 100%;
+
+        background-color: $grey-color;
+    }
+
+    .selected {
+        background-color: transparent;
+    }
+
+    .selected .sidebar-options__name {
+        color: $text-color;
+    }
+
+    .sidebar-options__item {
+        height: 7.5rem;
+
+        &:hover {
+            background-color: $selected-color;
+        }
+    }
+
+    .sidebar-options__link {
+        @include align-justify-center();
+
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .sidebar-options__icon {
+        margin: 0 0 0.4rem;
+    }
+
+    .sidebar-options__name {
+        font-size: 1.05rem;
+        font-weight: 400;
+        margin-top: 0.05rem;
+
+        color: $unselected-color;
+    }
+
+    & .bx {
+        padding: 0;
+        font-size: 2.3rem;
+    }
+}
+
+.closed {
+    display: none;
 }

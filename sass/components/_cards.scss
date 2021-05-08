@@ -1,3 +1,5 @@
+$title-font-size: 1.5rem;
+
 .cards {
     position: relative;
     top: $header-height;
@@ -5,16 +7,29 @@
 
     width: 100% - $sidebar-width;
     justify-items: center;
-    padding: calc(2.4rem + 5.6rem) 2.4rem 0;
+    padding: calc(2.4rem + 5.6rem) 2.4rem 5rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 25.97rem);
-    grid-row-gap: 4rem;
+    row-gap: 4rem;
+}
+
+.cards-small {
+    left: $small-sidebar-width;
+
+    width: calc(100% - #{$small-sidebar-width});
+    column-gap: 1.6rem;
+
+    .card {
+        max-width: 100%;
+    }
+
+    .card-title {
+        font-size: $title-font-size + 0.2;
+    }
 }
 
 .card {
     max-width: 29.6rem;
-    max-height: 25.97rem;
 
     &-link {
         display: flex;
@@ -63,7 +78,8 @@
 
     &-title {
         @include overflow-lines(2);
-        font-size: 1.5rem;
+
+        font-size: $title-font-size;
         font-weight: 500;
         margin: 1.2rem 0 0.2rem 0;
 
@@ -97,6 +113,10 @@
         .bx {
             padding: 0.4rem;
         }
+    }
+
+    &-views {
+        margin-right: 0.5rem;
     }
 
     :hover .card-options {

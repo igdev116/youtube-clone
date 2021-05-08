@@ -86,9 +86,9 @@ function slider() {
                     tagsCtn.style.transform = `translateX(${distance}px)`;
                 }
 
-                if (true) transValue(tagsCtn.style.transform) <= distance ? hide(nextBtn) : show(nextBtn);
-
                 show(prevBtn);
+
+                if (true) transValue(tagsCtn.style.transform) <= distance ? hide(nextBtn) : show(nextBtn);
             }
             // handle when the user drags all the way to the right
             else if (x > startX) {
@@ -338,3 +338,21 @@ function renderCards() {
 }
 
 renderCards();
+
+function moveSidebar() {
+    let menuBtn = document.querySelector('.header-menu-btn'); // get element of menu button
+    let largeSidebar = document.querySelector('.sidebar-large'); // get element of large sidebar
+    let smallSidebar = document.querySelector('.sidebar-small'); // get element of small sidebar
+    let tagsCtn = document.querySelector('.tags-container'); // get element of tags container
+    let cardsCtn = document.querySelector('.cards'); // get element of cards container
+
+    menuBtn.addEventListener('click', () => {
+        largeSidebar.classList.toggle('closed');
+        smallSidebar.classList.toggle('closed');
+        tagsCtn.classList.toggle('tags-container-small');
+        cardsCtn.classList.toggle('cards-small');
+        slider();
+    })
+}
+
+moveSidebar();
