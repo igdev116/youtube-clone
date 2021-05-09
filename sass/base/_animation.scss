@@ -1,0 +1,10 @@
+@keyframes fadeZoom {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+}
