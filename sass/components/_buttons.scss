@@ -5,43 +5,65 @@ button {
     cursor: pointer;
 }
 
-.btn-up,
-.btn-down {
+.btn-active {
     position: relative;
+    width: 3.7rem;
+    height: 3.7rem;
 
-    &:before,
-    &:after {
+    .btn-bgc {
+        z-index: -2;
         content: "";
         position: absolute;
         top: 50%;
         left: 50%;
-
+    
         width: calc(100% + 2px);
         height: calc(100% + 2px);
         border-radius: 50%;
         transform: translate(-50%, -50%);
-        opacity: 0;
-    }    
+
+        opacity: 1;
+
+        background-color: $grey-color;
+    }
 }
 
+.btn-up,
 .btn-down {
     &:before {
-        z-index: -1;        
-
-        background-color: $btn-active-color;
-    }       
-   
-    &:active:before {
-        opacity: 1;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        border-radius: 50%;
     }
 }
 
 .btn-up {
-    &:after {
-        z-index: -2;
+    &:before {
+        z-index: -3;
+    
+        transform: translate(-50%, -50%) scale(0.9);
 
-        background-color: $selected-tag-bgc;
+        background-color: $active-border-color;
 
-        animation: fadeZoom 0.25s;
+        animation: fadeZoom 0.4s ease-out;
+    }
+}
+
+.btn-down {
+    &:before {
+        z-index: -1;
+        
+        transform: translate(-50%, -50%);
+
+        opacity: 1;
+    }
+
+    &:active:before {
+        background-color: $btn-active-color;
     }
 }
