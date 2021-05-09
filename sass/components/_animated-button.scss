@@ -1,0 +1,57 @@
+.toggle {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+
+    &-wrapper {
+        position: relative;
+        
+        display: block;
+        height: 3.4rem;
+        width: 6rem;
+
+        cursor: pointer;
+    }
+
+    &__input {
+        display: none;
+    }
+
+    &__bar {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 0;
+
+        border-radius: 34px;
+
+        background-color: yellowgreen;
+
+        transition: 0.4s;
+    }
+
+    &__bar:before {
+        position: absolute;
+        content: "";
+        bottom: 4px;
+        left: 4px;
+
+        height: 2.6rem;
+        width: 2.6rem;
+        border-radius: 50%;
+
+        background-color: white;
+
+        transition: 0.4s;
+    }
+
+    &__input:checked + &__bar {
+        background-color: red;
+    }
+
+    &__input:checked + &__bar:before {
+        transform: translateX(26px);
+    }
+}
