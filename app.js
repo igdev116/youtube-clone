@@ -369,3 +369,63 @@ function renderCards() {
 }
 
 renderCards();
+
+function btnAffect() {
+    let btns = document.querySelectorAll('.btn-active'); // get element of active buttons
+
+    for (let btn of btns) {
+        btn.addEventListener('mousedown', () => {
+            btn.classList.add('btn-down');
+            btn.classList.remove('btn-up');
+        })
+
+        btn.addEventListener('mouseup', () => {
+            btn.classList.remove('btn-down');
+            btn.classList.add('btn-up');
+        })
+    }
+}
+
+btnAffect();
+
+// function darkMode() {
+//     let toggleBtn = document.querySelector('.toggle'); // get element of toggle button
+//     let toggleInp = toggleBtn.querySelector('.toggle__input'); // get element of toggle input
+//     console.log({toggleInp})
+
+//     toggleInp.addEventListener('change', () => {
+//         if (toggleInp.target.checked) {
+//             document.documentElement.setAttribute('data-theme', 'dark');
+//             console.log('hello')
+//         } else {
+//             document.documentElement.setAttribute('data-theme', 'light');
+//             console.log('vcl')
+//         }
+//     })
+// }
+
+function darkMode() {
+    const toggleSwitch = document.querySelector('.toggle input[type="checkbox"]');
+    const currentTheme = localStorage.getItem('theme');
+    
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') {
+            toggleSwitch.checked = true;
+        }
+    }
+
+    toggleSwitch.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            console.log(e.target.checked);
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            console.log(e.target.checked);
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+}
+
+darkMode();

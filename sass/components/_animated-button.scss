@@ -26,8 +26,9 @@
         top: 0;
 
         border-radius: 34px;
+        overflow: hidden;
 
-        background-color: yellowgreen;
+        background-color: $inactive-animated-btn-color;
 
         transition: 0.4s;
     }
@@ -47,11 +48,31 @@
         transition: 0.4s;
     }
 
+    &__bar:after {
+        position: absolute;
+        content: "";
+        bottom: 4px;
+        left: 4px;
+
+        height: 2.6rem;
+        width: 2.6rem;
+        border-radius: 50%;
+        transform: translateX(50px);
+
+        background-color: $inactive-animated-btn-color;
+
+        transition: 0.4s;
+    }
+
     &__input:checked + &__bar {
-        background-color: red;
+        background-color: $active-animated-btn-color;
     }
 
     &__input:checked + &__bar:before {
-        transform: translateX(26px);
+        transform: translateX(-50px);
+    }
+
+    &__input:checked + &__bar:after {
+        transform: translateX(0px);
     }
 }
