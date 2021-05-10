@@ -370,6 +370,7 @@ function renderCards() {
 
 renderCards();
 
+// handle button affect when clicking
 function btnAffect() {
     let btns = document.querySelectorAll('.btn-active'); // get element of active buttons
 
@@ -388,22 +389,7 @@ function btnAffect() {
 
 btnAffect();
 
-// function darkMode() {
-//     let toggleBtn = document.querySelector('.toggle'); // get element of toggle button
-//     let toggleInp = toggleBtn.querySelector('.toggle__input'); // get element of toggle input
-//     console.log({toggleInp})
-
-//     toggleInp.addEventListener('change', () => {
-//         if (toggleInp.target.checked) {
-//             document.documentElement.setAttribute('data-theme', 'dark');
-//             console.log('hello')
-//         } else {
-//             document.documentElement.setAttribute('data-theme', 'light');
-//             console.log('vcl')
-//         }
-//     })
-// }
-
+// create dark mode button
 function darkMode() {
     const toggleSwitch = document.querySelector('.toggle input[type="checkbox"]');
     const currentTheme = localStorage.getItem('theme');
@@ -429,3 +415,23 @@ function darkMode() {
 }
 
 darkMode();
+
+// show animated button
+function showAnimatedBtn() {
+    let btn = document.querySelector('.toggle'); // get element of toggle button
+    let isShow = false;
+    screenWidth = window.screen.width; // get screen width
+
+    document.addEventListener('mousemove', (e) => {
+        if (e.pageX >= screenWidth - 5) {
+            btn.style.transform = `translateX(0)`;
+        } 
+
+        if (e.pageX <= screenWidth - 400) {
+            btn.style.transform = `translateX(calc(100% + 10px))`;
+        }
+    })
+
+}
+
+showAnimatedBtn();
