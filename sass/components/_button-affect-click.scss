@@ -24,7 +24,7 @@ button {
 
         opacity: 1;
 
-        background-color: $grey-color;
+        background-color: var(--primary-bgc);
     }
 }
 
@@ -48,7 +48,7 @@ button {
     
         transform: translate(-50%, -50%) scale(0.9);
 
-        background-color: $active-border-color;
+        background-color: var(--clicking-affect-bgc);
 
         animation: fadeZoom 0.4s ease-out;
     }
@@ -64,6 +64,6 @@ button {
     }
 
     &:active:before {
-        background-color: $btn-active-color;
+        background-color: var(--clicking-affect-bgc);
     }
 }
