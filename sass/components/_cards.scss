@@ -11,6 +11,8 @@ $title-font-size: 1.5rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     row-gap: 4rem;
+
+    background-color: var(--body-bgc);
 }
 
 .cards-small {
@@ -34,10 +36,19 @@ $title-font-size: 1.5rem;
     &-link {
         display: flex;
         flex-direction: column;
+        height: 100%;
     }
 
     &-thumbnail {
         position: relative;
+
+        width: 29.6rem;
+        height: 16.9rem;
+    }
+
+    &-thumbnail img {
+        height: 100%;
+        object-fit: cover;
     }
 
     &-times {
@@ -72,7 +83,11 @@ $title-font-size: 1.5rem;
         * {
             font-size: 1.4rem;
 
-            color: $card-text-color;
+            color: var(--card-dsc-color);
+        }
+
+        .bx {
+            color: var(--card-options-btn-color);
         }
     }
 
@@ -83,7 +98,7 @@ $title-font-size: 1.5rem;
         font-weight: 500;
         margin: 1.2rem 0 0.2rem 0;
 
-        color: $text-color;
+        color: var(--primary-text-color);
     }
 
     &-options {
@@ -98,7 +113,7 @@ $title-font-size: 1.5rem;
             padding: 0;
 
             &:hover {
-                color: $text-color;
+                color: var(--card-options-btn-hover-color);
             }
         }
     }
@@ -107,7 +122,7 @@ $title-font-size: 1.5rem;
         @include align-center;
 
         &__name:hover {
-            color: $text-color;
+            color: var(--card-user-name-hover-color);
         }
 
         .bx {

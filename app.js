@@ -180,147 +180,147 @@ slider();
 function renderCards() {
     const cardsInfo = [
         {
-            title: '8 reasons to start using SCSS right now',
+            title: 'Khoá học evondev của mình có gì ? Và vì sao mà bạn nên tham gia',
             thumb: '1',
             avatar: '1',
-            userName: 'Dev Ed',
-            views: '3.9M',
+            userName: 'Evondev',
+            views: '12.3B',
             time: '2 days',
-            duration: '3:32'
+            duration: '1:04:02'
         },
         {
-            title: '8 reasons to start using SCSS right now',
-            thumb: '1',
-            avatar: '1',
-            userName: 'Dev Ed',
-            views: '3.9M',
-            time: '2 days',
-            duration: '3:32'
+            title: 'Designing & Building a Personal Portfolio from SCRATCH!',
+            thumb: '2',
+            avatar: '2',
+            userName: 'F8',
+            views: '55.7K',
+            time: '2 seconds',
+            duration: '31:03'
         },
         {
-            title: '8 reasons to start using SCSS right now',
-            thumb: '1',
-            avatar: '1',
-            userName: 'Dev Ed',
-            views: '3.9M',
-            time: '2 days',
-            duration: '3:32'
+            title: 'YouTube Create Awesome Web Designs | Layout Design Tutorial',
+            thumb: '3',
+            avatar: '3',
+            userName: 'CFD',
+            views: '31.2K',
+            time: '12 months',
+            duration: '21:02'
         },
         {
-            title: '8 reasons to start using SCSS right now',
-            thumb: '1',
-            avatar: '1',
-            userName: 'Dev Ed',
-            views: '3.9M',
-            time: '2 days',
-            duration: '3:32'
+            title: 'NewTechShop REVIEW] Đánh Giá Surface Laptop 2 Chi Tiết Từ A Đến Z',
+            thumb: '4',
+            avatar: '4',
+            userName: 'Erik',
+            views: '1.02M',
+            time: '55 seconds',
+            duration: '43:12'
         },
         {
-            title: '8 reasons to start using SCSS right now',
-            thumb: '1',
-            avatar: '1',
-            userName: 'Dev Ed',
-            views: '3.9M',
-            time: '2 days',
-            duration: '3:32'
+            title: 'freeCodeCamp Give your CSS superpowers by learning Sass',
+            thumb: '5',
+            avatar: '5',
+            userName: 'freeCodeCamp',
+            views: '69.9M',
+            time: '3 minutes',
+            duration: '33:32'
         },
         {
-            title: '8 reasons to start using SCSS right now',
-            thumb: '1',
-            avatar: '1',
-            userName: 'Dev Ed',
-            views: '3.9M',
-            time: '2 days',
-            duration: '3:32'
+            title: 'YouTube SƠN TÙNG M-TP | MUỘN RỒI MÀ SAO CÒN | OFFICIAL MUSIC VIDEO',
+            thumb: '6',
+            avatar: '6',
+            userName: 'Clever Progammer',
+            views: '112B',
+            time: '2 hours',
+            duration: '13:44'
         },
         {
-            title: '8 reasons to start using SCSS right now',
-            thumb: '1',
-            avatar: '1',
-            userName: 'Dev Ed',
-            views: '3.9M',
-            time: '2 days',
-            duration: '3:32'
+            title: 'Evondev là ai ?',
+            thumb: '7',
+            avatar: '7',
+            userName: 'Baroibeo',
+            views: '12',
+            time: '5 days',
+            duration: '6:55'
         },
         {
-            title: '8 reasons to start using SCSS right now',
-            thumb: '1',
-            avatar: '1',
-            userName: 'Dev Ed',
-            views: '3.9M',
-            time: '2 days',
-            duration: '3:32'
+            title: 'F8 - Học lập trình để đi làm!',
+            thumb: '8',
+            avatar: '2',
+            userName: 'Ren',
+            views: '10.3B',
+            time: '29 days',
+            duration: '2:1'
         },
         {
-            title: '8 reasons to start using SCSS right now',
-            thumb: '1',
-            avatar: '1',
-            userName: 'Dev Ed',
-            views: '3.9M',
-            time: '2 days',
-            duration: '3:32'
+            title: 'CFD Khóa học thực chiến front-end căn bản CFD',
+            thumb: '9',
+            avatar: '5',
+            userName: 'F8',
+            views: '12B',
+            time: '12 years',
+            duration: '10:01'
         },
         {
-            title: '8 reasons to start using SCSS right now',
-            thumb: '1',
-            avatar: '1',
-            userName: 'Dev Ed',
-            views: '3.9M',
-            time: '2 days',
-            duration: '3:32'
+            title: 'Liên Minh 360 Thầy Ba” tổ chức tặng quà từ thiện nhân dịp trung thu',
+            thumb: '10',
+            avatar: '3',
+            userName: 'Easy Frontend',
+            views: '12K',
+            time: '8 months',
+            duration: '55:32'
         },
         {
-            title: '8 reasons to start using SCSS right now',
-            thumb: '1',
-            avatar: '1',
-            userName: 'Dev Ed',
-            views: '3.9M',
-            time: '2 days',
-            duration: '3:32'
+            title: 'YouTube Yasuo Montage - Best Yasuo Vũ Trụ 2017',
+            thumb: '11',
+            avatar: '4',
+            userName: 'freeCodeCamp',
+            views: '101K',
+            time: '2 months',
+            duration: '97:12'
         },
         {
-            title: '8 reasons to start using SCSS right now',
-            thumb: '1',
-            avatar: '1',
-            userName: 'Dev Ed',
+            title: 'YouTube I Opened A Restaurant That Pays You To Eat At It',
+            thumb: '12',
+            avatar: '6',
+            userName: 'Porn',
             views: '3.9M',
-            time: '2 days',
-            duration: '3:32'
+            time: '2 years',
+            duration: '1:03:54'
         },
         {
-            title: '8 reasons to start using SCSS right now',
-            thumb: '1',
-            avatar: '1',
-            userName: 'Dev Ed',
-            views: '3.9M',
-            time: '2 days',
-            duration: '3:32'
+            title: 'YouTube QUÂN A.P - BÔNG HOA ĐẸP NHẤT [OFFICIAL LYRICS VIDEO]',
+            thumb: '13',
+            avatar: '7',
+            userName: 'Emily',
+            views: '365',
+            time: '1 month',
+            duration: '63:48'
         },
         {
-            title: '8 reasons to start using SCSS right now',
-            thumb: '1',
-            avatar: '1',
-            userName: 'Dev Ed',
-            views: '3.9M',
-            time: '2 days',
-            duration: '3:32'
+            title: 'YouTube Code cùng Ông Dev #1 | #ODLive',
+            thumb: '14',
+            avatar: '5',
+            userName: 'Ông Dev',
+            views: '11.2M',
+            time: '12 days',
+            duration: '04:32'
         },
         {
-            title: '8 reasons to start using SCSS right now',
-            thumb: '1',
-            avatar: '1',
-            userName: 'Dev Ed',
-            views: '3.9M',
+            title: 'YouTube Career path của frontend developer 2020 🎉',
+            thumb: '15',
+            avatar: '4',
+            userName: 'Quoc Mang Tang',
+            views: '255K',
             time: '2 days',
-            duration: '3:32'
+            duration: '11:50'
         }, {
-            title: '8 reasons to start using SCSS right now',
-            thumb: '1',
+            title: 'YouTube 2 A.M Study Session 📚 - [lofi hip hop/chill beats]',
+            thumb: '16',
             avatar: '1',
-            userName: 'Dev Ed',
+            userName: 'VTV24',
             views: '3.9M',
-            time: '2 days',
-            duration: '3:32'
+            time: '3 days',
+            duration: '12:03:11'
         },
     ] // save cards info
 
@@ -424,10 +424,12 @@ function showAnimatedBtn() {
 
     document.addEventListener('mousemove', (e) => {
         if (e.pageX >= screenWidth - 5) {
+            btn.style.opacity = 1;
             btn.style.transform = `translateX(0)`;
         } 
 
         if (e.pageX <= screenWidth - 400) {
+            btn.style.opacity = 1;
             btn.style.transform = `translateX(calc(100% + 10px))`;
         }
     })

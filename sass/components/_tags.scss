@@ -7,10 +7,10 @@
     width: 100% - $sidebar-width;
     height: $header-height;
     overflow: hidden;
-    border-top: 1px solid $border-color;
-    border-bottom: 1px solid $border-color;
+    border-top: 1px solid var(--primary-border-color);
+    border-bottom: 1px solid var(--primary-border-color);
 
-    background-color: $grey-color;
+    background-color: var(--primary-bgc);
 
     .next-btn,
     .prev-btn {
@@ -21,20 +21,25 @@
         height: calc(100% - 5px);
         top: 50%;
         transform: translateY(-50%);
-        background-color: $grey-color;
+        background-color: var(--primary-bgc);
 
         .bx {
             font-size: 1.3rem;
+
+            color: var(--tags-btn-color);
         }
     }
-
+    $white: var(--primary-bgc);
     .prev-btn {
-        box-shadow: 12px 0 15px 5px rgba($grey-color, 1);
+        left: 0;
+        
+        box-shadow: var(--tags-left-btn-boxshadow-color);
     }
 
     .next-btn {
         right: 0;
-        box-shadow: -12px 0 15px 5px rgba($grey-color, 1);
+        
+        box-shadow: var(--tags-right-btn-boxshadow-color);
     }
 }
 
@@ -72,23 +77,23 @@
     padding: 0 1.2rem;
     border-radius: 16px;
     font-size: 1.4rem;
-    color: $text-color;
-    border: 1px solid $tag-border-color;
-
-    background-color: $tag-bgc;
+    border: 1px solid var(--primary-border-color);
+    
+    color: var(--primary-text-color);
+    background-color: var(--tag-bgc);
 
     transition: 0.15s ease;
 
     &:hover {
-        background-color: $tag-hover-bgc;
+        background-color: var(--tag-hover-bgc);
     }
 }
 
 .selected-tag {
-    background-color: $selected-tag-bgc;
-    color: black;
+    background-color: var(--selected-tag-bgc);
+    color: var(--selected-text-color);
 
     &:hover {
-        background-color: #909090;
+        background-color: $selected-tag-hover-bgc;
     }
 }

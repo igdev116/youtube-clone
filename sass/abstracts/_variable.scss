@@ -1,8 +1,84 @@
+:root {
+    --primary-bgc: #ffffff;
+    --primary-text-color: #282828;
+    --primary-border-color: #0000001a;
+
+    --header-icon-color: #606060;
+    --clicking-affect-bgc: #e5e5e5;
+    --input-placeholder-color: #888888;
+
+    --body-bgc: #f9f9f9;
+
+    --input-bgc: transparent;
+    --search-btn-bgc: #f8f8f8;
+
+    --selected-name-color: #CC0000;
+    --selected-icon-color: #ff0000;
+    --unselected-icon-color: #606060;
+    --sidebar-title-color: #606060;
+    --sidebar-selected-bgc: #e5e5e5;
+    --siderbar-hover-bgc: #f2f2f2;
+
+    --tags-btn-color:#606060;
+    --tags-left-btn-boxshadow-color: 10px 0 15px 8px #ffffff;
+    --tags-right-btn-boxshadow-color: -10px 0 15px 8px #ffffff;
+    --tag-bgc: #F2F2F2;
+    --tag-hover-bgc: #E5E5E5;
+    --selected-tag-bgc: #606060;
+    --selected-text-color: #ffffff;
+
+    --card-dsc-color: #606060;
+    --card-user-name-hover-color: #030303;
+    --card-options-btn-color: #909090;
+    --card-options-btn-hover-color: #606060;
+
+    --siderbar-scrollbar-color: #CCCCCC;
+}
+
+[data-theme="dark"] {
+    --primary-bgc: #202020;
+    --primary-text-color: #ffffff;
+    --primary-border-color: #373737;
+
+    --header-icon-color: #ffffff;
+    --clicking-affect-bgc: #373737;
+    --input-placeholder-color: #757575;
+
+    --body-bgc: #181818;
+
+    --input-bgc: #121212;
+    --search-btn-bgc: #373737;
+    
+    --selected-name-color: #ffffff;
+    --selected-icon-color: #ffffff;
+    --unselected-icon-color: #909090;
+    --sidebar-title-color: #A0A0A0;
+    --sidebar-selected-bgc: #383838;
+    --siderbar-hover-bgc: #383838;
+    
+    --tags-btn-color:#ffffff;
+    --tags-left-btn-boxshadow-color: 10px 0 15px 8px #202020;
+    --tags-right-btn-boxshadow-color: -10px 0 15px 8px #202020;
+    --tag-bgc: #373737;
+    --tag-hover-bgc: #ffffff33;
+    --selected-tag-bgc: #f5f5f5;
+    --selected-text-color: #202020;
+
+    --card-dsc-color: #aaa;
+    --card-user-name-hover-color: #ffffff;
+    --card-options-btn-color: #aaa;
+    --card-options-btn-hover-color: #ffffff;
+
+    --siderbar-scrollbar-color: #909090;
+}
+
 $header-height: 5.6rem;
 $sidebar-width: 15.7%;
 $small-sidebar-width: 7.2rem;
 
 $grey-color: #202020;
+
+
 $text-color: #FFFFFF;
 $input-text-color: #E2E2E2;
 $input-color: #121212;
@@ -15,7 +91,15 @@ $title-color: #A0A0A0;
 $card-text-color: #aaa;
 $tag-bgc: #373737;
 $selected-tag-bgc: #FFFFFF;
-$tag-hover-bgc: rgba(255, 255, 255, 0.2);;
+$tag-hover-bgc: #ffffff33;
 $tag-border-color: rgba(255, 255, 255, 0.1);
 $copyright-color: #717171;
 $scrollbar-color: #909090;
+$btn-active-color: #373737;
+$active-border-color: #5b5b5b;
+
+// can using 
+$selected-tag-hover-bgc: #909090;
+
+$inactive-animated-btn-color: #CCCCCC;
+$active-animated-btn-color: #202020;

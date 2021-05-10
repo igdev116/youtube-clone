@@ -3,9 +3,12 @@
 
 @import './base/base';
 @import './base/typography';
+@import './base/animation';
 
 @import './components/tags';
 @import './components/cards';
+@import './components/animated-button';
+@import './components/button-affect-click';
 
 @import './layout/header';
 @import './layout/sidebar';

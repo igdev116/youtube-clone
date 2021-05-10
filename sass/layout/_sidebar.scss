@@ -9,13 +9,13 @@
         padding: 0.9rem 0;
         overflow-y: auto;
 
-        background-color: $grey-color;
+        background-color: var(--primary-bgc);
     }
 
     .copyright {
         font-size: 1.2rem;
         padding: 1.6rem 2.4rem;
-        border-top: 1px solid #373737;
+        border-top: 1px solid var(--primary-border-color);
 
         color: $copyright-color;
     }
@@ -28,16 +28,20 @@
 // sidebar options
 .sidebar-options {
     .selected {
-        background-color: $selected-color;
+        background-color: var(--sidebar-selected-bgc);
 
         .bx {
-            color: $text-color;
+            color: var(--selected-icon-color);
         }
+    }
+
+    .selected &__name {
+        @include sidebar-name-color(500);
     }
 
     &-first {
         padding-bottom: 1rem;
-        border-bottom: 1px solid $border-color;
+        border-bottom: 1px solid var(--primary-border-color);
     }
 
     &-second {
@@ -45,7 +49,7 @@
     }
 
     &__item:hover {
-        background-color: $selected-color;
+        background-color: var(--siderbar-hover-bgc);
     }
 
     &__link {
@@ -58,7 +62,7 @@
             font-size: 2.3rem;
             padding: 0rem 0.45rem;
 
-            color: $unselected-color;
+            color: var(--unselected-icon-color);
         }
     }
 
@@ -74,15 +78,16 @@
 // sidebar subscriptions
 .sidebar-subs-list {
     padding: 1rem 0;
-    border-top: 1px solid $border-color;
+    border-top: 1px solid var(--primary-border-color);
 }
 
 .sidebar-subs-title {
     padding: 1rem 1.2rem 1rem 2.4rem;
     font-size: 1.4rem;
     text-transform: uppercase;
+    font-weight: 500;
 
-    color: $title-color;
+    color: var(--sidebar-title-color);
 }
 
 .sidebar-sub {
@@ -93,7 +98,7 @@
         padding: 0 2rem;
 
         &:hover {
-            background-color: $selected-color;
+            background-color: var(--siderbar-hover-bgc);
         }
     }
 
@@ -111,7 +116,7 @@
 // sidebar more from youtube
 .sidebar-more-list {
     padding: 1rem 0;
-    border-top: 1px solid $border-color;
+    border-top: 1px solid var(--primary-border-color);
 
     &-title {
         @extend .sidebar-subs-title;
@@ -126,14 +131,14 @@
         padding: 0 2rem;
 
         &:hover {
-            background-color: $selected-color;
+            background-color: var(--siderbar-hover-bgc);
         }
     }
 
     .bx {
         font-size: 2rem;
 
-        color: $unselected-color;
+        color: var(--unselected-icon-color);
     }
 
     &__icon {
@@ -148,7 +153,7 @@
 // sidebar functions
 .sidebar-functions {
     padding: 1rem 0;
-    border-top: 1px solid $border-color;
+    border-top: 1px solid var(--primary-border-color);
 }
 
 .sidebar-function {
@@ -158,11 +163,11 @@
         padding: 0 2rem;
 
         .bx {
-            color: $unselected-color;
+            color: var(--unselected-icon-color);
         }
 
         &:hover {
-            background-color: $selected-color;
+            background-color: var(--siderbar-hover-bgc);
         }
     }
 
@@ -177,13 +182,12 @@
 
 // small sidebar
 .sidebar-small {
-    // display: none;
     width: 7.2rem;
 
     .sidebar-options {
         height: 100%;
 
-        background-color: $grey-color;
+        background-color: var(--primary-bgc);
     }
 
     .selected {
@@ -191,14 +195,14 @@
     }
 
     .selected .sidebar-options__name {
-        color: $text-color;
+        color: var(--selected-name-color);
     }
 
     .sidebar-options__item {
         height: 7.5rem;
 
         &:hover {
-            background-color: $selected-color;
+            background-color: var(--siderbar-hover-bgc);
         }
     }
 
@@ -218,7 +222,7 @@
         font-weight: 400;
         margin-top: 0.05rem;
 
-        color: $unselected-color;
+        color: var(--primary-text-color);
     }
 
     & .bx {

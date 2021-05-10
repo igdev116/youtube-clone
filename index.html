@@ -15,7 +15,8 @@
     <!-- header -->
     <header class="header">
         <div class="header-left">
-            <button class="header-menu-btn">
+            <button class="header-menu-btn btn-active">
+                <div class="btn-bgc"></div>
                 <i class='bx bx-menu'></i>
             </button>
 
@@ -68,21 +69,25 @@
                 </button>
             </div>
 
-            <button class="header-microphone-btn">
+            <button class="header-microphone-btn btn-active">
+                <div class="btn-bgc"></div>
                 <i class='bx bxs-microphone'></i>
             </button>
         </div>
 
         <div class="header-right">
-            <button class="header-create-btn">
-                <i class='bx bxs-video-plus'></i>
+            <button class="header-create-btn btn-active">
+                <div class="btn-bgc"></div>
+                <i class='bx bxs-video-plus bx-tada'></i>
             </button>
 
-            <button class="header-apps-btn">
+            <button class="header-apps-btn btn-active">
+                <div class="btn-bgc"></div>
                 <i class='bx bxs-category'></i>
             </button>
 
-            <button class="header-notifications-btn">
+            <button class="header-notifications-btn btn-active">
+                <div class="btn-bgc"></div>
                 <i class='bx bxs-bell'></i>
             </button>
 
@@ -434,6 +439,14 @@
     <section class="cards">
         
     </section>
+
+    <!-- toggle button -->
+    <div class="toggle">
+        <label for="toggle-input" class="toggle-wrapper">
+            <input id="toggle-input" class="toggle__input" type="checkbox">
+            <div class="toggle__bar"></div>
+        </label>
+    </div>
 
     <script src="app.js"></script>
 </body>
