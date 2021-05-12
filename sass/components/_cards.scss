@@ -97,11 +97,11 @@ $title-font-size: 1.5rem;
         height: 3.55rem;
         font-size: $title-font-size;
         font-weight: 500;
-        margin: 1.2rem 0 0.2rem 0;
+        margin: 1.2rem 0 0.4rem 0;
 
         color: var(--primary-text-color);
     }
-
+    
     &-options {
         position: absolute;
         right: 0.5px;
@@ -121,6 +121,8 @@ $title-font-size: 1.5rem;
 
     &-user {
         @include align-center;
+
+        margin-bottom: 0.05rem;
 
         &__name:hover {
             color: var(--card-user-name-hover-color);
