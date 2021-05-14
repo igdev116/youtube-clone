@@ -211,6 +211,7 @@ html {
 }
 .cards-small .card-title {
   font-size: 1.7rem;
+  height: 4rem;
 }
 
 .card {
